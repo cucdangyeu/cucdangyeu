@@ -20,7 +20,10 @@
 	align-items: center;
 
 }
-
+.img {
+  width: 120px;
+  height: 120px;
+}
 .box {
 	width: 100%;
 	position: absolute;
@@ -45,9 +48,9 @@ canvas {
 }
 
 #pinkboard:before, #pinkboard:after {
-	content: '';
+	content: 'dfsfsd';
 	position: absolute;
-	background: #FF5CA4;
+	background: #5cff7f;
 	width: 100px;
 	height: 160px;
 	border-top-left-radius: 50px;
@@ -82,12 +85,19 @@ canvas {
 		transform: scale(1);
 	}
 }
+ 
   </style>
  </HEAD>
  
  <BODY>
+  <div class="img">
+    <img style='height: 100%; width: 100%; object-fit: contain' src="https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/273924496_1372897673165902_5553613476596810500_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=1AOpW9E7Lq4AX8pJvxB&_nc_ht=scontent-sin6-2.xx&oh=00_AfC15dKS9KuJ6ObvHHMV5rTZLSFUi3abPsoP835j0Nvq3A&oe=636FD5A5" alt="Cục đáng yêu 😘😘">
+    <h5 style="color: white;">Cục đáng yêu 😘😘</h5>
+  </div>
    <div class="box">
       <canvas id="pinkboard"></canvas>
+      
+      
    </div>
   <script>
   /*
