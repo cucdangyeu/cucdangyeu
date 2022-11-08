@@ -23,6 +23,7 @@
 .img {
   width: 120px;
   height: 120px;
+  border-radius: 8;
 }
 .box {
 	width: 100%;
@@ -42,17 +43,17 @@ canvas {
 #pinkboard {
 	position: relative;
 	margin: auto;
-	height: 500px;
-	width: 500px;
-	animation: animate 1.3s infinite;
+	height: 800px;
+	width: 800px;
+	animation: animate 1.5s infinite;
 }
 
 #pinkboard:before, #pinkboard:after {
 	content: 'dfsfsd';
 	position: absolute;
 	background: #5cff7f;
-	width: 100px;
-	height: 160px;
+	width: 120px;
+	height: 180px;
 	border-top-left-radius: 50px;
 	border-top-right-radius: 50px;
 }
@@ -91,14 +92,14 @@ canvas {
  
  <BODY>
   <div class="img">
-    <img style='height: 100%; width: 100%; object-fit: contain' src="https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/273924496_1372897673165902_5553613476596810500_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=1AOpW9E7Lq4AX8pJvxB&_nc_ht=scontent-sin6-2.xx&oh=00_AfC15dKS9KuJ6ObvHHMV5rTZLSFUi3abPsoP835j0Nvq3A&oe=636FD5A5" alt="Cục đáng yêu 😘😘">
-    <h5 style="color: white;">Cục đáng yêu 😘😘</h5>
+    <img style='height: 100%; width: 100%; object-fit: contain ; border-radius: 8' src="https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/273924496_1372897673165902_5553613476596810500_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=1AOpW9E7Lq4AX8pJvxB&_nc_ht=scontent-sin6-2.xx&oh=00_AfC15dKS9KuJ6ObvHHMV5rTZLSFUi3abPsoP835j0Nvq3A&oe=636FD5A5" alt="Cục đáng yêu 😘😘">
+    <h5 style="color: white; margin-block-start: 0;">Cục đáng yêu 😘😘</h5>
   </div>
    <div class="box">
       <canvas id="pinkboard"></canvas>
-      
-      
+     
    </div>
+  
   <script>
   /*
  * Settings
