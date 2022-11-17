@@ -97,10 +97,24 @@ canvas {
     <canvas id="pinkboard"></canvas>
     
   </div>
-  <button onclick="play()" type="button">playbutton</button>
+  <audio autoplay loop  id="playAudio">
+    <source src="nhacnen.mp3">
+  </audio>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/main.js"></script>
   <script>
+     function playMusic(){
+  var myAudio = document.getElementById('playAudio');
+  if (myAudio.duration > 0 && !myAudio.paused) {
+      //Its playing...do your job
+
+  } else {
+    myAudio.play()
+    //Not playing...maybe paused, stopped or never played.
+
+  }
+}
+ 
   /*
  * Settings
  */
@@ -116,7 +130,9 @@ var settings = {
 /*
  * RequestAnimationFrame polyfill by Erik Möller
  */
-(function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
+(function(){
+  
+  var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
 /*
  * Point class
  */
@@ -246,6 +262,7 @@ var ParticlePool = (function() {
  * Putting it all together
  */
 (function(canvas) {
+
   var context = canvas.getContext('2d'),
       particles = new ParticlePool(settings.particles.length),
       particleRate = settings.particles.length / settings.particles.duration, // particles/sec
@@ -331,17 +348,23 @@ var ParticlePool = (function() {
     render();
   }, 10);
 })(document.getElementById('pinkboard'));
+function playMusic(){
+  var myAudio = document.getElementById('playAudio');
+  if (myAudio.duration > 0 && !myAudio.paused) {
+      //Its playing...do your job
 
+  } else {
+    myAudio.play()
+    //Not playing...maybe paused, stopped or never played.
 
-var myaudio = document.getElementById("audioID");
+  }
+}
+var body = document.getElementsByTagName("body")[0];
+ body.addEventListener("click",function(ev){
+  console.log('ak')
+  playMusic()
+})
 
-function play() { 
-return myaudio.play(); 
-};
-
-function stop() {
-return myaudio.pause(); 
-};
   </script>
  </BODY>
  
